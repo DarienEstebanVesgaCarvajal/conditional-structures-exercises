@@ -1,21 +1,13 @@
-from time import localtime
+gamesWonByA = int(input("What's the number of games won by player A?: "))
+gamesWonByB = int(input("What's the number of games won by player B?: "))
 
-currentTime = localtime()
-currentDay = currentTime.tm_mday
-currentMonth = currentTime.tm_mon
-currentYear = currentTime.tm_year
-
-birthDay = input("What's your birth day?: ")
-birthMonth = input("What's your birth month?: ")
-birthYear = input("What's your birth year?: ")
-
-birthDay = int(birthDay)
-birthMonth = int(birthMonth)
-birthYear = int(birthYear)
-
-age = currentYear - birthYear
-
-if (currentMonth < birthMonth) or (currentMonth == birthMonth and currentDay < birthDay):
-    age -= 1
-
-print(f"You are {age} years old.")
+if (gamesWonByA >= 6 and gamesWonByA - gamesWonByB >= 2) or (gamesWonByA == 7 and gamesWonByB == 6):
+    print("A won.")
+elif (gamesWonByB >= 6 and gamesWonByB - gamesWonByA >= 2) or (gamesWonByB == 7 and gamesWonByA == 6):
+    print("B won.")
+elif (gamesWonByA < 0 or gamesWonByB < 0 or
+      (gamesWonByA > 7 and gamesWonByB < 5) or (gamesWonByB > 7 and gamesWonByA < 5) or 
+      (gamesWonByA > 6 and gamesWonByB > 6)):
+    print("Invalid.")
+else:
+    print("Still ongoing.")
