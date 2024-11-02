@@ -1,13 +1,13 @@
-gamesWonByA = int(input("What's the number of games won by player A?: "))
-gamesWonByB = int(input("What's the number of games won by player B?: "))
+sideA = float(input("What's the length of side A?: "))
+sideB = float(input("What's the length of side B?: "))
+sideC = float(input("What's the length of side C?: "))
 
-if (gamesWonByA >= 6 and gamesWonByA - gamesWonByB >= 2) or (gamesWonByA == 7 and gamesWonByB == 6):
-    print("A won.")
-elif (gamesWonByB >= 6 and gamesWonByB - gamesWonByA >= 2) or (gamesWonByB == 7 and gamesWonByA == 6):
-    print("B won.")
-elif (gamesWonByA < 0 or gamesWonByB < 0 or
-      (gamesWonByA > 7 and gamesWonByB < 5) or (gamesWonByB > 7 and gamesWonByA < 5) or 
-      (gamesWonByA > 6 and gamesWonByB > 6)):
-    print("Invalid.")
+if sideA + sideB <= sideC or sideA + sideC <= sideB or sideB + sideC <= sideA:
+    print("Not a valid triangle.")
 else:
-    print("Still ongoing.")
+    if sideA == sideB == sideC:
+        print("The triangle is equilateral.")
+    elif sideA == sideB or sideA == sideC or sideB == sideC:
+        print("The triangle is isosceles.")
+    else:
+        print("The triangle is scalene.")
