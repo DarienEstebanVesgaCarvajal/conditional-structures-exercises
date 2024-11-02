@@ -1,14 +1,10 @@
-firstWord = input("First word: ")
-secondWord = input("Second word: ")
+firstNumber = input("What's the first number? ")
+secondNumber = input("What's the second number? ")
 
-firstLength = len(firstWord)
-secondLength = len(secondWord)
+firstNumber = int(firstNumber)
+secondNumber = int(secondNumber)
 
-if firstLength > secondLength:
-    difference = firstLength - secondLength
-    print(f"The word '{firstWord}' is {difference} letters longer than '{secondWord}'.")
-elif secondLength > firstLength:
-    difference = secondLength - firstLength
-    print(f"The word '{secondWord}' is {difference} letters longer than '{firstWord}'.")
+if firstNumber < secondNumber:
+    print(f"{firstNumber} {secondNumber}")
 else:
-    print("Both words are the same length.")
+    print(f"{secondNumber} {firstNumber}")
