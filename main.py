@@ -1,16 +1,14 @@
-dividend = int(input("What's the dividend?: "))
-divisor = int(input("What's the divisor?: "))
+firstWord = input("First word: ")
+secondWord = input("Second word: ")
 
-if divisor == 0:
-    print("Error: Division by zero is undefined.")
+firstLength = len(firstWord)
+secondLength = len(secondWord)
+
+if firstLength > secondLength:
+    difference = firstLength - secondLength
+    print(f"The word '{firstWord}' is {difference} letters longer than '{secondWord}'.")
+elif secondLength > firstLength:
+    difference = secondLength - firstLength
+    print(f"The word '{secondWord}' is {difference} letters longer than '{firstWord}'.")
 else:
-    quotient = dividend // divisor
-    remainder = dividend % divisor
-
-    if remainder == 0:
-        print("The division is exact.")
-    else:
-        print("The division isn't exact.")
-    
-    print(f"Quotient: {quotient}")
-    print(f"Remainder: {remainder}")
+    print("Both words are the same length.")
