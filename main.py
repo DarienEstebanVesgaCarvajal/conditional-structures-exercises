@@ -1,11 +1,22 @@
-character = input("What's the character?: ")
+firstOperand = input("What's the first operand?: ")
+operator = input("What's the operator ( +, -, *, /)?: ")
+secondOperand = input("What's the second operand?: ")
 
-if character.isdigit():
-    print("It's a number.")
-elif character.isalpha():
-    if character.isupper():
-        print("It's an uppercase letter.")
+firstOperand = float(firstOperand)
+secondOperand = float(secondOperand)
+
+if operator == "+":
+    result = firstOperand + secondOperand
+elif operator == "-":
+    result = firstOperand - secondOperand
+elif operator == "*":
+    result = firstOperand * secondOperand
+elif operator == "/":
+    if secondOperand != 0:  # Check for division by zero
+        result = firstOperand / secondOperand
     else:
-        print("It's a lowercase letter.")
+        result = "Error: Division by zero."
 else:
-    print("It's neither a letter nor a number.")
+    result = "Error: Invalid operator."
+
+print(f"{firstOperand} {operator} {secondOperand} = {result}")
