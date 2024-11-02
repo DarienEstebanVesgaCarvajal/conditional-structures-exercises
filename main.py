@@ -1,12 +1,16 @@
-year = int(input("What's yhe year?: "))
+dividend = int(input("What's the dividend?: "))
+divisor = int(input("What's the divisor?: "))
 
-if year >= 1582: # G
-    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
-            print(f"The {year} year is a leap.")
+if divisor == 0:
+    print("Error: Division by zero is undefined.")
+else:
+    quotient = dividend // divisor
+    remainder = dividend % divisor
+
+    if remainder == 0:
+        print("The division is exact.")
     else:
-          print(f"The {year} year isn't a leap.")
-else:# J
-    if year %4 == 0:
-            print(f"The {year} year is a leap.")
-    else:
-        print(f"The {year} year isn't a leap.")
+        print("The division isn't exact.")
+    
+    print(f"Quotient: {quotient}")
+    print(f"Remainder: {remainder}")
