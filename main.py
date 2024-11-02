@@ -1,22 +1,21 @@
-firstOperand = input("What's the first operand?: ")
-operator = input("What's the operator ( +, -, *, /)?: ")
-secondOperand = input("What's the second operand?: ")
+from time import localtime
 
-firstOperand = float(firstOperand)
-secondOperand = float(secondOperand)
+currentTime = localtime()
+currentDay = currentTime.tm_mday
+currentMonth = currentTime.tm_mon
+currentYear = currentTime.tm_year
 
-if operator == "+":
-    result = firstOperand + secondOperand
-elif operator == "-":
-    result = firstOperand - secondOperand
-elif operator == "*":
-    result = firstOperand * secondOperand
-elif operator == "/":
-    if secondOperand != 0:  # Check for division by zero
-        result = firstOperand / secondOperand
-    else:
-        result = "Error: Division by zero."
-else:
-    result = "Error: Invalid operator."
+birthDay = input("What's your birth day?: ")
+birthMonth = input("What's your birth month?: ")
+birthYear = input("What's your birth year?: ")
 
-print(f"{firstOperand} {operator} {secondOperand} = {result}")
+birthDay = int(birthDay)
+birthMonth = int(birthMonth)
+birthYear = int(birthYear)
+
+age = currentYear - birthYear
+
+if (currentMonth < birthMonth) or (currentMonth == birthMonth and currentDay < birthDay):
+    age -= 1
+
+print(f"You are {age} years old.")
