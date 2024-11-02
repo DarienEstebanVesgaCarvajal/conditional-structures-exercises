@@ -1,13 +1,18 @@
-sideA = float(input("What's the length of side A?: "))
-sideB = float(input("What's the length of side B?: "))
-sideC = float(input("What's the length of side C?: "))
+height = float(input("What's your height in meters?: "))
+weight = float(input("What's your weight in kilograms?: "))
+age = int(input("What's your age?: "))
 
-if sideA + sideB <= sideC or sideA + sideC <= sideB or sideB + sideC <= sideA:
-    print("Not a valid triangle.")
-else:
-    if sideA == sideB == sideC:
-        print("The triangle is equilateral.")
-    elif sideA == sideB or sideA == sideC or sideB == sideC:
-        print("The triangle is isosceles.")
+bmi = weight / (height ** 2)
+
+if age < 45:
+    if bmi < 22.0:
+        risk_condition = "low"
     else:
-        print("The triangle is scalene.")
+        risk_condition = "medium"
+else:
+    if bmi < 22.0:
+        risk_condition = "medium"
+    else:
+        risk_condition = "high"
+
+print(f"Your BMI is {bmi}. Your risk condition is {risk_condition}.")
